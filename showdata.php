@@ -34,7 +34,7 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
       </tr>
     </thead>
 <?php
-$sum = ;
+$sum = 0;
 while($Result = mysqli_fetch_array($res))
 {
 ?>
