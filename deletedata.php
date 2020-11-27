@@ -7,14 +7,13 @@ if (mysqli_connect_errno($conn))
     die('Failed to connect to MySQL PLEASE TRY AGAIN: '.mysqli_connect_error());
 }
 
-$product = $_POST['product'];
-$price = $_POST['price'];
+$id = $_GET['id'];
+$sql = "DELETE FROM guestbook WHERE id = '$id'";
 
 
-$sql = "DELETE FROM guestbook WHERE Name='$product'";
 
 if (mysqli_query($conn, $sql)) {
-  header("Location: showdata.php");
+    echo "Success " . $sql . "<br>" . mysqli_error($conn);
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
