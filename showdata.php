@@ -43,7 +43,8 @@ while($Result = mysqli_fetch_array($res))
     <td><center><?php echo $Result['price'];?></center></td>
     <td><center><?php echo $Result['amount'];?></center></td>
     <td><center><?php echo $sum+$Result['price']*$Result['amount'];?></center></td>
-    <td><center><a href="formdeletedata.html"><input type="submit" value="Delete"  class="btn-default"></a></center></td>
+      <td><?php echo '<a href="delete.php?id='.$Result['id'].'">
+      Delete</a>'?></td>
   </tr>
 <?php
 }
